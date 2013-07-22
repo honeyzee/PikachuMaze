@@ -24,6 +24,10 @@
 		3364C081179D9C43008A2DC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3364C05C179D9C43008A2DC3 /* UIKit.framework */; };
 		3364C089179D9C43008A2DC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3364C087179D9C43008A2DC3 /* InfoPlist.strings */; };
 		3364C08B179D9C43008A2DC3 /* MazeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3364C08A179D9C43008A2DC3 /* MazeTests.m */; };
+		3364C098179DCF55008A2DC3 /* MazeGarden.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C097179DCF55008A2DC3 /* MazeGarden.png */; };
+		3364C09A179DD0B9008A2DC3 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C099179DD0B9008A2DC3 /* pikachu.png */; };
+		3364C09C179DD4E6008A2DC3 /* Diglett.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C09B179DD4E6008A2DC3 /* Diglett.png */; };
+		3364C09E179DDA45008A2DC3 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3364C09D179DDA45008A2DC3 /* background.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		3364C086179D9C43008A2DC3 /* MazeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MazeTests-Info.plist"; sourceTree = "<group>"; };
 		3364C088179D9C43008A2DC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3364C08A179D9C43008A2DC3 /* MazeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeTests.m; sourceTree = "<group>"; };
+		3364C097179DCF55008A2DC3 /* MazeGarden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MazeGarden.png; sourceTree = "<group>"; };
+		3364C099179DD0B9008A2DC3 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
+		3364C09B179DD4E6008A2DC3 /* Diglett.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diglett.png; sourceTree = "<group>"; };
+		3364C09D179DDA45008A2DC3 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,10 @@
 				3364C073179D9C43008A2DC3 /* HZYMyScene.m */,
 				3364C075179D9C43008A2DC3 /* Spaceship.png */,
 				3364C077179D9C43008A2DC3 /* Images.xcassets */,
+				3364C097179DCF55008A2DC3 /* MazeGarden.png */,
+				3364C099179DD0B9008A2DC3 /* pikachu.png */,
+				3364C09B179DD4E6008A2DC3 /* Diglett.png */,
+				3364C09D179DDA45008A2DC3 /* background.jpeg */,
 				3364C061179D9C43008A2DC3 /* Supporting Files */,
 			);
 			path = Maze;
@@ -242,9 +254,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3364C065179D9C43008A2DC3 /* InfoPlist.strings in Resources */,
+				3364C09C179DD4E6008A2DC3 /* Diglett.png in Resources */,
 				3364C078179D9C43008A2DC3 /* Images.xcassets in Resources */,
+				3364C09E179DDA45008A2DC3 /* background.jpeg in Resources */,
+				3364C098179DCF55008A2DC3 /* MazeGarden.png in Resources */,
 				3364C076179D9C43008A2DC3 /* Spaceship.png in Resources */,
 				3364C06E179D9C43008A2DC3 /* Main.storyboard in Resources */,
+				3364C09A179DD0B9008A2DC3 /* pikachu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +487,7 @@
 				3364C090179D9C43008A2DC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3364C091179D9C43008A2DC3 /* Build configuration list for PBXNativeTarget "MazeTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +496,7 @@
 				3364C093179D9C43008A2DC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

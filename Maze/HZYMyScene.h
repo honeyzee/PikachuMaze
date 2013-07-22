@@ -8,6 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface HZYMyScene : SKScene
+@interface HZYMyScene : SKScene <SKPhysicsContactDelegate>
+
+@property SKSpriteNode *pikachu;
+-(void)makeWall:(CGPoint)point;
+
+
 
 @end
