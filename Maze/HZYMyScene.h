@@ -11,7 +11,10 @@
 @interface HZYMyScene : SKScene <SKPhysicsContactDelegate>
 
 @property SKSpriteNode *pikachu;
+@property SKSpriteNode *potion;
+@property SKSpriteNode *ash;
 -(void)makeWall:(CGPoint)point;
+- (void)makeRaichu:(CGPoint)point;
 
 
 

@@ -28,6 +28,9 @@
 		3364C09A179DD0B9008A2DC3 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C099179DD0B9008A2DC3 /* pikachu.png */; };
 		3364C09C179DD4E6008A2DC3 /* Diglett.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C09B179DD4E6008A2DC3 /* Diglett.png */; };
 		3364C09E179DDA45008A2DC3 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3364C09D179DDA45008A2DC3 /* background.jpeg */; };
+		3364C0A0179DF61D008A2DC3 /* raichu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C09F179DF61D008A2DC3 /* raichu.png */; };
+		3364C0A2179DF621008A2DC3 /* ash.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C0A1179DF621008A2DC3 /* ash.png */; };
+		3364C0A4179DFEAF008A2DC3 /* potion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3364C0A3179DFEAF008A2DC3 /* potion.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		3364C099179DD0B9008A2DC3 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
 		3364C09B179DD4E6008A2DC3 /* Diglett.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diglett.png; sourceTree = "<group>"; };
 		3364C09D179DDA45008A2DC3 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
+		3364C09F179DF61D008A2DC3 /* raichu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raichu.png; sourceTree = "<group>"; };
+		3364C0A1179DF621008A2DC3 /* ash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ash.png; sourceTree = "<group>"; };
+		3364C0A3179DFEAF008A2DC3 /* potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = potion.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,9 @@
 				3364C099179DD0B9008A2DC3 /* pikachu.png */,
 				3364C09B179DD4E6008A2DC3 /* Diglett.png */,
 				3364C09D179DDA45008A2DC3 /* background.jpeg */,
+				3364C09F179DF61D008A2DC3 /* raichu.png */,
+				3364C0A1179DF621008A2DC3 /* ash.png */,
+				3364C0A3179DFEAF008A2DC3 /* potion.png */,
 				3364C061179D9C43008A2DC3 /* Supporting Files */,
 			);
 			path = Maze;
@@ -256,10 +265,13 @@
 				3364C065179D9C43008A2DC3 /* InfoPlist.strings in Resources */,
 				3364C09C179DD4E6008A2DC3 /* Diglett.png in Resources */,
 				3364C078179D9C43008A2DC3 /* Images.xcassets in Resources */,
+				3364C0A0179DF61D008A2DC3 /* raichu.png in Resources */,
+				3364C0A2179DF621008A2DC3 /* ash.png in Resources */,
 				3364C09E179DDA45008A2DC3 /* background.jpeg in Resources */,
 				3364C098179DCF55008A2DC3 /* MazeGarden.png in Resources */,
 				3364C076179D9C43008A2DC3 /* Spaceship.png in Resources */,
 				3364C06E179D9C43008A2DC3 /* Main.storyboard in Resources */,
+				3364C0A4179DFEAF008A2DC3 /* potion.png in Resources */,
 				3364C09A179DD0B9008A2DC3 /* pikachu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
