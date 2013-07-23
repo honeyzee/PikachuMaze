@@ -12,7 +12,9 @@ const uint32_t digletts = 0x1 << 0;
 const uint32_t pikachus = 0x1 << 1;
 const uint32_t potions = 0x1 << 2;
 const uint32_t ashes = 0x1 << 3;
-
+@interface HZYMyScene ()
+@property (nonatomic) CGPoint lastLocation;
+@end
 @implementation HZYMyScene
 
 
@@ -21,6 +23,7 @@ const uint32_t ashes = 0x1 << 3;
         /* Setup your scene here */
         
         self.physicsWorld.contactDelegate = self;
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
@@ -51,6 +54,8 @@ const uint32_t ashes = 0x1 << 3;
         _pikachu.physicsBody.collisionBitMask = digletts | potions;
         _pikachu.physicsBody.contactTestBitMask = digletts | potions;
         _pikachu.physicsBody.allowsRotation = NO;
+        _pikachu.physicsBody.mass = 0.01;
+        _pikachu.physicsBody.friction = 1000;
         [self addChild:_pikachu];
         
         //ASH
@@ -102,12 +107,12 @@ const uint32_t ashes = 0x1 << 3;
         [self makeWall:CGPointMake(300, 150)];
         [self makeWall:CGPointMake(300, 250)];
      
-        [self makeWall:CGPointMake(50, 10)];
-        [self makeWall:CGPointMake(50, 60)];
-        [self makeWall:CGPointMake(50, 110)];
+        //[self makeWall:CGPointMake(50, 10)];
+        //[self makeWall:CGPointMake(50, 60)];
+        //[self makeWall:CGPointMake(50, 110)];
         
-        [self makeWall:CGPointMake(100, 110)];
-        [self makeWall:CGPointMake(150, 110)];
+        [self makeWall:CGPointMake(100, 90)];
+        [self makeWall:CGPointMake(150, 90)];
         
         [self makeWall:CGPointMake(150, 25)];
         
@@ -140,7 +145,11 @@ const uint32_t ashes = 0x1 << 3;
 
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
-    if ((contact.bodyA.node == _pikachu || contact.bodyB.node == _pikachu) && (contact.bodyA.node == _potion || contact.bodyB.node == _potion))
+    if ((contact.bodyA.node == _pikachu && [contact.bodyB.node.name isEqualToString:@"wall"]) || (contact.bodyB.node == _pikachu && [contact.bodyA.node.name isEqualToString:@"wall"]))
+    {
+        //_pikachu.position = _lastLocation;
+    }
+    else if ((contact.bodyA.node == _pikachu || contact.bodyB.node == _pikachu) && (contact.bodyA.node == _potion || contact.bodyB.node == _potion))
                                                                             
     {
         [_potion removeFromParent];
@@ -165,14 +174,34 @@ const uint32_t ashes = 0x1 << 3;
     }
 }
 
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
         
         CGPoint location = [touch locationInNode:self];
         
-        _pikachu.position = location;
+        //NSLog(@"%@", [_pikachu.physicsBody allContactedBodies]);
+        
+        if([[_pikachu.physicsBody allContactedBodies] count] == 0)
+        {
+            _lastLocation = _pikachu.position;
+            CGPoint force = CGPointMake(location.x - _pikachu.position.x, location.y - _pikachu.position.y);
+            force.x *= 0.05;
+            force.y *= 0.05;
+            [_pikachu.physicsBody applyForce:force];
+        }
+        else
+        {
+            CGPoint force = CGPointZero;
+            for(SKPhysicsBody *wall in [_pikachu.physicsBody allContactedBodies])
+            {
+                force.x = force.x + (_pikachu.position.x - wall.node.position.x);
+                force.y = force.y + (_pikachu.position.y - wall.node.position.y);
+            }
+            [_pikachu.physicsBody applyForce:force];
+        }
     }
 }
 
@@ -191,7 +220,10 @@ const uint32_t ashes = 0x1 << 3;
     diglett.physicsBody.contactTestBitMask = pikachus;
     diglett.physicsBody.allowsRotation = NO;
     diglett.physicsBody.dynamic = NO;
+    diglett.physicsBody.affectedByGravity = NO;
     diglett.physicsBody.restitution = 0.0;
+    //diglett.physicsBody.mass = CGFLOAT_MAX;
+    diglett.name = @"wall";
     [self addChild:diglett];
 }
 
